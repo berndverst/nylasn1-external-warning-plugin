@@ -1,5 +1,6 @@
 {
-  "name": "external-domain-warning",
+  "name": "External Domain Warning",
+  "title": "External Domain Warning",
   "main": "./lib/main",
   "version": "0.1.0",
   "repository": {

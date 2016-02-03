@@ -1,4 +1,4 @@
 
-## My Package
+## External Domain Warning for N1
 
-A sample package for N1. It demonstrates how to add components to the composer's action bar and the message sidebar. Enjoy!
+This is an extension to visually warn you that a given thread contains participants from external domains.
