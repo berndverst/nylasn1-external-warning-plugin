@@ -9,7 +9,7 @@
   "engines": {
     "nylas": ">=0.3.46-0fe308f"
   },
-  "description": "Enter a description of your package!",
+  "description": "Shows a warning for each message thread containing participants belonging to external domains.",
   "dependencies": {},
   "license": "MIT"
 }
