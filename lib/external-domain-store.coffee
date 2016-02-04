@@ -1,6 +1,5 @@
 NylasStore = require 'nylas-store'
-
-{Utils, DraftStore, React} = require 'nylas-exports'
+{AccountStore} = require 'nylas-exports'
 
 class ExternalDomainStore extends NylasStore
   constructor: ->
@@ -14,13 +13,14 @@ class ExternalDomainStore extends NylasStore
     myDomains = {}
     otherDomains = {}
 
+    account = AccountStore.accountForId(thread.accountId)
+    myDomains[account.emailAddress.split("@")[1].trim()] = true
+    for alias in account.aliases
+      myDomains[alias.email.split("@")[1].trim()] = true
+
     thread.participants.forEach (p, i) =>
       domain = p.email.toLowerCase().split("@")[1].trim()
-      if (p.isMe())
-        if not (domain of myDomains)
-          myDomains[domain] = true
-
-      else
+      if not (p.isMe())
         if not (domain of myDomains)
           if not (domain of otherDomains)
             otherDomains[domain] = true
