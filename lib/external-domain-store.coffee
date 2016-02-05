@@ -17,7 +17,7 @@ class ExternalDomainStore extends NylasStore
     for alias in account.aliases
       myDomains[alias.email.split("@")[1].trim()] = true
 
-    thread.participants.forEach (p, i) =>
+    for p, i in thread.participants
       domain = p.email.toLowerCase().split("@")[1].trim()
       if not (domain of myDomains)
         @_threadsWithExternalDomain[thread.id] = true
