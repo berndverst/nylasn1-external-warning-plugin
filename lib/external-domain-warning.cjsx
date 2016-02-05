@@ -3,6 +3,7 @@
 # Show an icon for each thread to indicate whether it contains recipients
 # from an external domain.
 
+{React} = require 'nylas-exports'
 {RetinaImg} = require 'nylas-component-kit'
 ExternalDomainStore = require './external-domain-store'
 
