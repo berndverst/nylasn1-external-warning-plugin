@@ -5,8 +5,6 @@ ExternalDomainNotificationBarWarning = require './external-domain-notification-b
 
 module.exports =
   activate: (@state) ->
-    ComponentRegistry.register ExternalDomainWarning,
-      role: 'ThreadListIcon'
     ComponentRegistry.register ExternalDomainNotificationBarWarning,
       role: 'MessageListHeaders'
 
