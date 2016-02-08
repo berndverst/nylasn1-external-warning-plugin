@@ -4,7 +4,12 @@
 # contains recipients from an external domain.
 
 {Rx} = require 'rx-lite'
-{React} = require 'nylas-exports'
+{DatabaseStore, Draft, Message, React} = require 'nylas-exports'
+{ObservableListDataSource,
+ QueryResultSet,
+ QuerySubscription} = require 'nylas-exports'
+
+{Drafts} = require 'nylas-observables'
 {RetinaImg} = require 'nylas-component-kit'
 ExternalDomainStore = require './external-domain-store'
 
@@ -14,10 +19,13 @@ class ExternalDomainDraftWarning extends React.Component
   constructor: (@props) ->
     @state =
       hasExternal: false
-    #TODO(berndverst): Check draft recipients and show warning
-    #                  Update warning every time recipients are altered.
-    # @state =
-    #   hasExternal: ExternalDomainStore.containsExternalDomain(@props.draft)
+
+    console.log @props
+
+    query = DatabaseStore.find(Message, @props.draftClientId)
+    Rx.Observable.from(query).subscribe (msg) =>
+      console.log "" + msg
+    # WHY: object is not iterable????
 
   render: =>
     if @state.hasExternal
@@ -29,5 +37,6 @@ class ExternalDomainDraftWarning extends React.Component
       </div>
     else
       null
+
 
 module.exports = ExternalDomainDraftWarning
