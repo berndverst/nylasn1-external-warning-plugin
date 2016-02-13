@@ -1,4 +1,5 @@
 ## External Domain Warning for N1
+=======WORK IN PROGRESS==========
 
 This is an extension to visually warn you that a given thread contains participants from external domains.
 
