@@ -3,7 +3,7 @@
 # Show a warning notification to indicate the current draft
 # contains recipients from an external domain.
 
-{Rx} = require 'rx-lite'
+{Rx} = require 'nylas-exports'
 {DatabaseStore, Draft, Message, React} = require 'nylas-exports'
 {ObservableListDataSource,
  QueryResultSet,
@@ -21,10 +21,15 @@ class ExternalDomainDraftWarning extends React.Component
       hasExternal: false
 
     console.log @props
+    query = DatabaseStore.findAll(Message).where(
+      [Message.attributes.id.in([@props.draftClientId])]
+    )
 
-    query = DatabaseStore.find(Message, @props.draftClientId)
-    Rx.Observable.from(query).subscribe (msg) =>
-      console.log "" + msg
+
+    #query = DatabaseStore.find(Message, @props.draftClientId)
+    console.log @query
+    # Rx.Observable.from(query).subscribe (msg) =>
+    #   console.log "" + msg
     # WHY: object is not iterable????
 
   render: =>
