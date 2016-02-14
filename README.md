@@ -3,7 +3,7 @@
 
 This is an extension to visually warn you that a given thread contains participants from external domains.
 
-Note: This version may be broken / unusable due to ongoing development. Please see the (stable branch)[https://github.com/berndverst/nylasn1-external-warning-plugin/tree/stable].
+Note: This version may be broken / unusable due to ongoing development. Please see the [stable branch](https://github.com/berndverst/nylasn1-external-warning-plugin/tree/stable).
 
 Limitations:
 - Does not update when thread is updated.
