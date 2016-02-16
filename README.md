@@ -1,7 +1,7 @@
 ## External Domain Warning for N1
 =======WORK IN PROGRESS==========
 
-This is an extension to visually warn you that a given thread contains participants from external domains.
+This is a Nylas N1 plugin to visually warn you that a given thread contains participants from external domains.
 
 Note: This version may be broken / unusable due to ongoing development. Please see the [stable branch](https://github.com/berndverst/nylasn1-external-warning-plugin/tree/stable).
 
